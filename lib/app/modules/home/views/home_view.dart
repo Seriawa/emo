@@ -1,4 +1,3 @@
-import 'package:emo/app/data/emoji_data.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -14,9 +13,19 @@ class HomeView extends GetView<HomeController> {
         centerTitle: true,
       ),
       body: Center(
-        child: Text(
-          EmojiData.emojiList [0],
-          style: const TextStyle(fontSize: 20),
+        child: GestureDetector(
+          onTap: () => controller.changeActiveIndex(),
+          child: Card(
+            elevation: 5,
+            shape:
+                RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+            child: Obx(
+              () => Text(
+                controller.getActiveEmoji.data,
+                style: const TextStyle(fontSize: 80),
+              ),
+            ),
+          ),
         ),
       ),
     );
