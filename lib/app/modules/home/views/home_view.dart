@@ -9,11 +9,17 @@ class HomeView extends GetView<HomeController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Тыкай'),
+        title: const Text('Тычки мычки перемычки'),
         centerTitle: true,
+        backgroundColor: Color.fromARGB(255, 3, 202, 106),
       ),
-      body: Center(
-        child: GestureDetector(
+      
+      body: Container(
+        decoration: BoxDecoration(
+          color: Color.fromARGB(255, 92, 0, 213),
+        ),
+        child: Center(
+          child: GestureDetector(
           onTap: () => controller.changeActiveIndex(),
           child: Card(
             elevation: 5,
@@ -28,6 +34,6 @@ class HomeView extends GetView<HomeController> {
           ),
         ),
       ),
-    );
+       ),);
   }
 }

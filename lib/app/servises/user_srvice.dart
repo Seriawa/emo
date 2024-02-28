@@ -7,13 +7,12 @@ class UserService extends GetxService {
   var storageService = Get.find<Storage>();
   Emoji? userData;
 
-  Future<UserService> init() async {
-    var dataInStorage = Storage();
-    // ignore: unnecessary_null_comparison
+Future<UserService> init() async {
+    var dataInStorage = storageService.readSettings();
     if (dataInStorage == null) {
       userData = await getFirstAvailableEmoji();
     }
-    userData = dataInStorage as Emoji?;
+    userData = dataInStorage;
     return this;
   }
 

@@ -9,6 +9,7 @@ class Storage extends GetxService {
 
   Future <Storage> init() async{
     await GetStorage.init(StorageKeysHelper.containerName.name);
+    box = GetStorage(StorageKeysHelper.containerName.name);
     return this;
   } 
 
