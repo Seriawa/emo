@@ -11,12 +11,16 @@ class HomeView extends GetView<HomeController> {
       appBar: AppBar(
         title: const Text('Тычки мычки перемычки'),
         centerTitle: true,
-        backgroundColor: Color.fromARGB(255, 3, 202, 106),
+        backgroundColor: Color.fromARGB(255, 27, 38, 44),
       ),
       
       body: Container(
-        decoration: BoxDecoration(
-          color: Color.fromARGB(255, 92, 0, 213),
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            colors: [Color.fromARGB(255, 15, 76, 117), Color.fromARGB(255, 50, 130, 184), Color.fromARGB(255, 187, 225, 250)],
+            begin: Alignment.bottomLeft,
+            end: Alignment.topRight,
+          ),
         ),
         child: Center(
           child: GestureDetector(
